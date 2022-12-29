@@ -10,8 +10,14 @@ type Props = {
 };
 
 const ExpenseList = (props: Props) => {
+  if (props.expenses.length === 0) {
+    return (
+      <h2 className={styles['expenses-list__fallback']}>No Expenses Found!</h2>
+    );
+  }
+
   return (
-    <div className={styles['expenses-list']}>
+    <ul className={styles['expenses-list']}>
       {props.expenses.map((item: Expense) => (
         <ExpenseItem
           key={item.id}
@@ -20,7 +26,7 @@ const ExpenseList = (props: Props) => {
           date={item.date}
         />
       ))}
-    </div>
+    </ul>
   );
 };
 
