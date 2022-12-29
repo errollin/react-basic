@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from 'components/Expenses/ExpenseFilter/ExpenseFilter.module.scss';
 
-import { Year } from 'models';
+import { Item } from 'models';
 import { DUMMY_YEAR_OPTIONS } from 'data';
 
 type Props = {
@@ -11,7 +11,7 @@ type Props = {
 };
 
 const ExpenseFilter = (props: Props) => {
-  const years: Array<Year> = DUMMY_YEAR_OPTIONS;
+  const years: Array<Item> = DUMMY_YEAR_OPTIONS;
 
   const handleChangeFilter: React.ChangeEventHandler = (event: any) => {
     props.onFilterChange(event.target.value);
