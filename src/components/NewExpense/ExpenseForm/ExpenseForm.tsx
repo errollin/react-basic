@@ -6,6 +6,7 @@ import { Expense } from 'models';
 
 type Props = {
   onSaveExpenseData: Function;
+  onCancel: React.MouseEventHandler;
 };
 
 const ExpenseForm = (props: Props) => {
@@ -19,27 +20,21 @@ const ExpenseForm = (props: Props) => {
   //   enteredDate: '',
   // });
 
-  const handleChangeTitle: React.ChangeEventHandler = (
-    event: any
-  ) => {
+  const handleChangeTitle: React.ChangeEventHandler = (event: any) => {
     setEnteredTitle(event.target.value);
     // setUserInput((prevState) => {
     //   return { ...prevState, enteredTtile: event.target.value };
     // });
   };
 
-  const handleChangeAmount: React.ChangeEventHandler = (
-    event: any
-  ) => {
+  const handleChangeAmount: React.ChangeEventHandler = (event: any) => {
     setEnteredAmount(event.target.value);
     // setUserInput((prevState) => {
     //   return { ...prevState, enteredAmount: event.target.value };
     // });
   };
 
-  const handleChangeDate: React.ChangeEventHandler = (
-    event: any
-  ) => {
+  const handleChangeDate: React.ChangeEventHandler = (event: any) => {
     setEnteredDate(event.target.value);
     // setUserInput((prevState) => {
     //   return { ...prevState, enteredDate: event.target.value };
@@ -97,6 +92,9 @@ const ExpenseForm = (props: Props) => {
         </div>
       </div>
       <div className={styles['new-expense__actions']}>
+        <button type='button' onClick={props.onCancel}>
+          Cancel
+        </button>
         <button type='submit'>Add Expense</button>
       </div>
     </form>
