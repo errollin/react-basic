@@ -64,6 +64,7 @@ const ExpenseForm = (props: Props) => {
           <input
             id='title'
             type='text'
+            required
             value={enteredTitle}
             onChange={handleChangeTitle}
           />
@@ -86,6 +87,7 @@ const ExpenseForm = (props: Props) => {
             type='date'
             min='2022-01-01'
             max='2023-12-31'
+            required
             value={enteredDate}
             onChange={handleChangeDate}
           />
